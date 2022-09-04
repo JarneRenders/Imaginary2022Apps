@@ -1,0 +1,63 @@
+# reinforcement-learning-2
+Reinforcement Learning exhibit for the I AM A.I. exhibition (v2)
+
+## Compilation
+
+To install the required dependencies run `npm install` in the root directory.
+
+You can use `npm run build` or `npm run watch` in the root directory to build the client apps.
+
+The `.env` file in the root directory contains settings that are applied at compilation time.
+
+## Configuration
+
+The config directory has several data definitions.
+
+You can override any of them by creating a `settings.yml` file in the root directory.
+
+## Exhibit mode
+
+`exhibit.html` runs the exhibit in a fixed 1920x1080 resolution.
+
+To override settings in exhibit mode create a `settings-exhibit.yml` file in the root directory.
+
+The default language can also be set through the lang query string (e.g. `?lang=de`).
+
+## Embed mode
+
+`embed.html` allows you to embed instances of the app in your own website via an iframe.
+
+You can customize the functionality of the embeded app through query strings arguments:
+
+- **lang** (default: `en`): Language.
+- **map** (default: `maze1`): Map to show. Maps have to be stored in `data/mazes`.
+- **training**: Name of the q-value table to initialize the robot with. Q-values are stored in `data/training`.
+- **mapEditable** (default: `false`): If true, the map can be edited.
+- **tiles**: Comma separated list of the ids (numerical) of the tiles to show in the left side palette. Ids can be viewed in `config/tiles.yml`.
+- **commands**: Comma separated list of UI elements to show, from:
+  - run: The run button
+  - step: The step button
+  - turbo: The turbo button
+  - clear: The button to clear the training
+  - xr: The exploration rate slider (Explore / Exploit)
+  - reset-map: The button to reset the map
+- **exploreRate** (default: `0.2`) The starting exploration rate.
+- **learningRate** (default: `1`) The learning rate.
+- **speed** (default: `10`): The speed of the robot.
+- **showQValues** (default: `false`): If true, the q-values are shown on the map.
+- **autoRun** (default: `false`): If true, the robot starts in the running state.
+- **rewardBar** (default: `false`): If true, the reward bar is shown over the map (currently very specific to a particular 
+  experiment, so probably not practical).
+
+## Credits
+
+Developed by Eric Londaits for IMAGINARY gGmbH adapted from the original 
+[reinforcement-learning exhibit](https://github.com/IMAGINARY/reinforcement-learning/) 
+by Sebastián Uribe and Andreas Matt.
+
+Dutch translation by [Jarne Renders](https://github.com/JarneRenders).
+
+## License
+
+Copyright (c) 2020-2021 IMAGINARY gGmbH
+Licensed under the MIT license (see LICENSE)
