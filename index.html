@@ -1,0 +1,62 @@
+<!Doctype html>
+<html>
+<head>
+<style>
+
+html, body {
+  margin: 0;
+  margin-top: 100px;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: #2c3e50;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  text-align: center;
+}
+
+.btn-group button {
+  background-color: transparent; /* Green background */
+  border: 1px solid #f1c40f; /* Green border */
+  border-width: thin;
+  color: white; /* White text */
+  padding: 7px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  width: 25%; /* Set a width if needed */
+  display: block; /* Make the buttons appear below each other */
+  box-sizing: border-box;
+  border-radius: 1.5em;
+  cursor: pointer;
+  display: flex;
+  font-size: 1.4rem;
+  line-height: 3;
+  margin: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  transition: background 300ms ease-in-out;
+}
+
+/* Add a background color on hover */
+.btn-group button:hover {
+  background-color: #f1c40f;
+}
+</style>
+</head>
+
+<body>
+
+<div class="btn-group">
+  <button onclick="location.assign('reinforcement-learning-2/exhibit.html?lang=nl')">Reinforcement Learning</button>
+  <button onclick="location.assign('gradient-descent/index.html?lang=nl')">Gradient Descent</button>
+  <button onclick="location.assign('neural-numbers/index.html?lang=nl')">Neurale Cijfers</button>
+</div>
+
+</body>
+</html>
