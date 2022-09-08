@@ -1,9 +1,0 @@
-[submodule "gradient-descent"]
-	path = gradient-descent
-	url = https://github.com/IMAGINARY/gradient-descent.git
-[submodule "neural-numbers"]
-	path = neural-numbers
-	url = https://github.com/IMAGINARY/neural-numbers.git
-[submodule "reinforcement-learning-2"]
-	path = reinforcement-learning-2
-	url = https://github.com/IMAGINARY/reinforcement-learning-2.git
