@@ -66,6 +66,7 @@ input::-moz-focus-inner {
 }
 
 input, select, textarea {
+-ms-overflow-style:none;
 	-moz-appearance: none;
 	-webkit-appearance: none;
 	-ms-appearance: none;
@@ -89,8 +90,12 @@ input, select, textarea {
 	body {
 		background: #2e3842;
 	}
+body::-webkit-scrollbar {
+    width: 0em;
+}
 
 		body.is-preload *, body.is-preload *:before, body.is-preload *:after {
+-ms-overflow-style:none !important;
 			-moz-animation: none !important;
 			-webkit-animation: none !important;
 			-ms-animation: none !important;
@@ -3417,6 +3422,7 @@ input, select, textarea {
 	}
 
 		#page-wrapper:before {
+-ms-overflow-style:none;
 			background: rgba(0, 0, 0, 0);
 			content: '';
 			display: block;
