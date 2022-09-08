@@ -1,0 +1,34 @@
+$reaction-size: 80px;
+
+.reaction {
+  position: absolute;
+  width: $reaction-size;
+  height: $reaction-size;
+  z-index: 200;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  pointer-events: none;
+  transition: opacity 0.8s ease-in-out, margin-top 0.8s ease-in-out;
+
+  &.fading {
+    opacity: 0 !important;
+    margin-top: -200px;
+  }
+}
+
+.reaction-lava {
+  opacity: 0.8;
+}
+
+.reaction-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  pointer-events: none;
+}
