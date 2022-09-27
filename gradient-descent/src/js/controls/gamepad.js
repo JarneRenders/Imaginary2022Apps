@@ -21,9 +21,10 @@ export default class GamepadControls extends Controls {
     Array.from(navigator.getGamepads())
       .filter(gp => gp !== null && gp.index < this.states.length)
       .forEach(gp => {
-        this.modifyState(gp.index, "left", gp.axes[0] < -0.5);
-        this.modifyState(gp.index, "right", gp.axes[0] > 0.5);
-        this.modifyState(gp.index, "action", gp.buttons[1].pressed || gp.buttons[2].pressed);
+        this.modifyState(gp.index, "left", gp.axes[0] < -0.5 || (gp.buttons[14]?.pressed ?? false));
+        this.modifyState(gp.index, "right", gp.axes[0] > 0.5 || (gp.buttons[15]?.pressed ?? false));
+        this.modifyState(gp.index, "action", (gp.buttons[1]?.pressed ?? false) || (gp.buttons[2]?.pressed ?? false));
+        this.modifyState(gp.index, "language", gp.buttons[8]?.pressed ?? false);
       });
   }
 
@@ -36,7 +37,8 @@ export default class GamepadControls extends Controls {
    * @return {[{
    *   left: Boolean,
    *   right: Boolean,
-   *   action: Boolean
+   *   action: Boolean,
+   *   language: Boolean,
    * }]}
    */
   getStates() {

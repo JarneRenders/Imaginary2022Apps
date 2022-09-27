@@ -3,7 +3,7 @@
 A game of learning the concepts behind gradient descent by exploring the depths looking for
 treasure.
 
-Developed for the I AM AI exhibiton by IMAGINARY.
+Developed for the I AM AI exhibition by IMAGINARY.
 
 ## Configuration
 
@@ -11,6 +11,7 @@ A config file is loaded when opening the application. It supports the following 
 
 - **defaultLanguage** (string, default: `"en"`): Default language to use. Can be overriden by the
   `lang` query string.
+- **languages** (array of strings, default: all languages present in `tr.json`): Selection and order of language codes for i18n.
 - **useGamepads** (boolean, default: `true`): Enables gamepad use.
 - **useScreenControls** (boolean, default: `true`): Shows on-screen controllers.
 - **useKeyboardControls** (boolean, default: `true`): Control the game via keyboard (player 1: <kbd>
@@ -34,6 +35,7 @@ A config file is loaded when opening the application. It supports the following 
 - **continuousGame** (boolean, default: `false`): Skip the title screen and time limit,
   auto-restart.
 - **fullScreenButton** (boolean, default: `true`): Show a button to toggle full-screen mode.
+- **languageButton** (boolean, default: `true`): Show a button to cycle through the languages defined via `languages`.
 - **debugControls** (boolean, default: `false`): Shows debugging data for controls.
 
 By default, the config file `config.json` is used. However, this file name can be overwritten by
@@ -67,7 +69,7 @@ const createMap = (distance, length) => Array.from(
 game.setMap(createMap(parabola, 100));
 ```
 
-Passing `null` as map will revert back to auto-generating a new map for every round of the game.
+Passing `null` as map will revert to auto-generating a new map for every round of the game.
 
 Whenever another game round is started, the current map will be output to the developer console of
 the browser. This allows to store the current (possibly auto-generated) map elsewhere and re-use it
@@ -160,6 +162,15 @@ since the html files need to be updated in order to point to the updated build a
 cd src
 npx reload -d .. -w ../index.html -p [free port]
 ```
+
+### Internationalization
+
+To add a new translation, the following steps are necessary:
+
+- Figure out the language code for the language you want to add, e.g. `eo` for Esperanto.
+- Copy a locale file from `tr` for a language you are familiar with and rename its basename to match the new language code, e.g. copy `tr/en.json` to `tr/eo.json`.
+- Translate all the texts in the new locale file. Preserve whitespace.
+- Add the new language code and its endonym to `tr.json`.
 
 ## Credits
 
